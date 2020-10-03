@@ -6,8 +6,8 @@ import io
 # file_id of Reglament catalog - 1ierobuM_NbwuNZIiKgu34xnSRMoxI-Ra
 # URL: https://drive.google.com/drive/folders/1ierobuM_NbwuNZIiKgu34xnSRMoxI-Ra
 
-SCOPES = ['https://www.googleapis.com/auth/drive']
-SERVICE_ACCOUNT_FILE = 'reglament-112fdcb73dd9.json'
+SCOPES = ['https://www.googleapis.com/auth/drive']  # определение функции, которую будет делать сервис Google Platform
+SERVICE_ACCOUNT_FILE = 'reglament-112fdcb73dd9.json'  # .json сервиса
 credentials = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 service = build('drive', 'v3', credentials=credentials)
 
