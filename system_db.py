@@ -37,6 +37,12 @@ def check(login, password):  # проверка на присутствие по
             return False
 
 
+def check_status(login, status):
+    for val in sql.execure("SELECT * FROM users"):
+        if val[2] == login:
+            return val[4]
+
+
 def update_password(ID, new_password):  # смена пароля
     sql.execute(f"SELECT login FROM users WHERE ID = '{ID}'") # выбор ячейки "login" с таблицы users с определенным ID
     if sql.fetchone() is None:  # проверка на отстуствие пользователя с таким ID
